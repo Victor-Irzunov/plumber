@@ -18,6 +18,9 @@
   scroll-behavior: smooth;
 }
 
+
+
+
 .text-gradient {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
@@ -63,7 +66,11 @@
     #11101d 91.61%
   );
 }
+.bg-filter{
+  /* backdrop-filter: blur(2px); */
+  background-color: #11101de8;
 
+}
 .bg-gray-gradient {
   background: linear-gradient(
     153.47deg,

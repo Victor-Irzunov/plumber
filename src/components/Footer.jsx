@@ -1,6 +1,6 @@
 import styles from "../style";
 import { logo } from "../assets";
-import { footerLinks, socialMedia } from "../constants";
+import { socialMedia } from "../constants";
 
 const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
@@ -9,39 +9,52 @@ const Footer = () => (
         <img
           src={logo}
           alt="hoobank"
-          className="w-[266px] h-[72.14px] object-contain"
+          className="w-[300px] h-[82.14px] object-contain"
         />
         <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
-          A new way to make the payments easy, reliable and secure.
+          Опытный сантехник сделает всё качественно, аккуратно и недорого.
         </p>
       </div>
 
-      <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
-        {footerLinks.map((footerlink) => (
-          <div key={footerlink.title} className={`flex flex-col ss:my-0 my-4 min-w-[150px]`}>
-            <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-white">
-              {footerlink.title}
-            </h4>
-            <ul className="list-none mt-4">
-              {footerlink.links.map((link, index) => (
-                <li
-                  key={link.name}
-                  className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary cursor-pointer ${
-                    index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
-                  }`}
-                >
-                  {link.name}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <div className="flex-[1.5] w-full flex flex-row text-white text-center justify-between flex-wrap md:mt-0 mt-10">
+        <div className="flex-[1]">
+          <h4 className="text-[22px]">Наши контакты</h4>
+          <p className={`${styles.paragraph} text-[16px]`}>
+            г. Минск, ул. просп. Независимости 100 помщ. 100<br />
+            +375 29 000-00-00
+          </p>
+        </div>
+
+        <div className="flex-[1]">
+          <h4 className="text-[22px]">Наши реквизиты</h4>
+          <p className={`${styles.paragraph} text-[16px]`}>
+            ИП «ПрофСантех»<br/>
+            УНП 193609000<br/>
+            Зарегистрировано Минским горисполкомом 19.07.2017г.<br/>
+            Юридический адрес: 220040, г. Минск, ул. просп.Независимости 100 помщ.100<br/>
+            р/с: BY30 000 000 000 000 0000 в ЗАО «Ваш-Банк»
+          </p>
+        </div>
       </div>
     </div>
 
-    <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
-      <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
-        Copyright Ⓒ 2022 HooBank. All Rights Reserved.
+    <div className="
+    w-full flex justify-between
+    items-center md:flex-row
+    flex-col sm:pt-4 xx:pt-1  border-t-[1px]
+    border-t-[#3F3E45]">
+      <p className="
+      font-poppins
+      font-normal
+      text-center
+      sm:text-[14px]
+      xx:text-[10px]
+      leading-[27px]
+      text-white
+      opacity-30
+      hover:opacity-90
+      ">
+        Copyright Ⓒ 20..-2022. Created & Designed By <a href="https://vi-tech.by" className="text-gradient" target="_blank">VI:TECH</a>. &nbsp; Все права защищены. Информация на сайте не является публичной офертой.
       </p>
 
       <div className="flex flex-row md:mt-0 mt-6">
@@ -50,9 +63,9 @@ const Footer = () => (
             key={social.id}
             src={social.icon}
             alt={social.id}
-            className={`w-[21px] h-[21px] object-contain cursor-pointer ${
-              index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-            }`}
+            title={social.id}
+            className={`w-[21px] h-[21px] object-contain cursor-pointer ${index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+              }`}
             onClick={() => window.open(social.link)}
           />
         ))}

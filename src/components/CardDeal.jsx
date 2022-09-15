@@ -1,26 +1,36 @@
-import { card } from "../assets";
+import React, { useState } from "react"
+import { mask } from "../assets";
 import styles, { layout } from "../style";
 import Button from "./Button";
+import Modal from "./Modal";
 
-const CardDeal = () => (
-  <section className={layout.section}>
-    <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
-        Find a better card deal <br className="sm:block hidden" /> in few easy
-        steps.
-      </h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Arcu tortor, purus in mattis at sed integer faucibus. Aliquet quis
-        aliquet eget mauris tortor.ç Aliquet ultrices ac, ametau.
-      </p>
+const CardDeal = () => {
 
-      <Button styles={`mt-10`} />
-    </div>
+  const [isModal, setIsModal] = useState(false)
 
-    <div className={layout.sectionImg}>
-      <img src={card} alt="billing" className="w-[100%] h-[100%]" />
-    </div>
-  </section>
-);
+  return (
+    <section className={layout.section2}>
+      {isModal &&
+        <Modal
+          title={"Заказать работу в маске и бахилах"}
+          setIsModal={setIsModal}
+        />}
+      <div className={layout.sectionInfo}>
+        <h2 className={styles.heading2}>
+          Ваша безопасность.
+        </h2>
+        <p className={`${styles.paragraph} max-w-[500px] mt-5`}>
+          По Вашему желанию специалист будет работать в маске и бахилах.
+        </p>
+
+        <Button styles={`mt-10`} setIsModal={setIsModal} />
+      </div>
+
+      <div className={`flex-1 ${layout.sectionImg}`}>
+        <img src={mask} alt="billing" className="w-[80%]" />
+      </div>
+    </section>
+  )
+}
 
 export default CardDeal;
