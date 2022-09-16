@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 
 import { close, logo, menu, phone, clock, } from "../assets";
 import { navLinks } from "../constants";
@@ -8,9 +8,19 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false)
   const [isToggle, setIsToggle] = useState(false)
 
+ 
+
 
   return (
-    <nav className="w-[100%] flex py-3 justify-between items-center navbar">
+    <nav className="
+    w-[100%]
+    flex
+    py-3
+    justify-between
+    items-center
+    navbar
+    "
+    >
       <a href={`#home`}><img src={logo} alt="Логотип компании" title="Логотип компании" className="w-[60px]" /></a>
 
 
