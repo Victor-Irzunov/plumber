@@ -13,7 +13,7 @@ function Modal({ title, isModal, setIsModal }) {
 			relative rounded-xl
 			bg-black-gradient-2
 			text-white
-			w-[66%] 
+			w-[73%] 
 			h-auto
 			p-4
 			text-center'>
