@@ -1,4 +1,3 @@
-import airbnb from "./airbnb.png";
 import bill from "./help.png";
 import binance from "./binance.png";
 import card from "./card.png";
@@ -29,7 +28,6 @@ import mask from "./mask.png";
 import phone from "./phone.png";
 
 export {
-  airbnb,
   bill,
   binance,
   card,

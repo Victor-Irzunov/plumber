@@ -1,11 +1,13 @@
 import React, { useRef, useState } from "react"
 import axios from "axios"
 
-function FormPhone() {
+function FormPhone({ setIsModal }) {
+
 
 	const [name, setName] = useState('')
 	const [message, setMessage] = useState('')
 	const [tel, setTel] = useState('')
+	const [isSendBtn, setIsSendBtn] = useState(false)
 
 	const form = useRef()
 
@@ -24,6 +26,11 @@ function FormPhone() {
 			chat_id,
 			parse_mode: 'html',
 			text: messageForm,
+		}).then(data => {
+			setIsSendBtn(true)
+			setTimeout(() => {
+				setIsModal(false)
+			}, 2000)
 		})
 
 	}
@@ -33,7 +40,7 @@ function FormPhone() {
 
 	return (
 		<form ref={form} onSubmit={sendEmail}>
-			<div className="w-full flex justify-between mb-5 xx:flex-col ss:flex-row ss:mt-7 xx:mt-4">
+			<div className="w-full flex justify-between mb-5 xy:flex-col ss:flex-row ss:mt-7 xy:mt-4">
 				<input
 					type="text"
 					placeholder="Имя"
@@ -45,7 +52,7 @@ function FormPhone() {
 					border-[1px] 
 					border-cyan-400 
 					rounded-xl
-					xx:mb-3
+					xy:mb-3
 					ss:mb-0
 					"
 					onChange={e => setName(e.target.value)}
@@ -73,7 +80,7 @@ function FormPhone() {
 				name="message"
 				className="
 				w-full
-				xx:h-[7em]
+				xy:h-[7em]
 				ss:h-[10em]
 				md:h-[15em]
 				resize-none 
@@ -99,7 +106,7 @@ function FormPhone() {
 					cursor-pointer	
 					hover:border-cyan-600 
 						"
-				value="Заказать"
+				value={!isSendBtn ? "Заказать" : "Заказ отправлен"}
 			/>
 		</form>
 	)

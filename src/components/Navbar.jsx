@@ -15,14 +15,14 @@ const Navbar = () => {
 
 
       <a href="tel:+375290000000"
-        className="sm:block sd:hidden xm:mr-6 ml-5"
+        className="sm:block sd:hidden xm:mr-6 ml-5 xy:mr-7"
       ><img src={phone}
         alt="телефон"
         title="иконка телефона"
         className="w-8"
         /></a>
       <a href="tel:+375290000000"
-        className="text-white sm:hidden sd:block xx:hidden sd:mr-0 ml-2 mr-5"
+        className="text-white sm:hidden sd:block xy:hidden sd:mr-0 ml-2 mr-5"
       >
         +375 29 000 00 00
       </a>
@@ -62,7 +62,7 @@ const Navbar = () => {
         />
 
       </div>
-      <div className="sm:hidden sd:block xx:hidden sd:ml-0 ml-3">
+      <div className="sm:hidden sd:block xy:hidden sd:ml-0 ml-3">
         <span className="text-white text-xs uppercase mr-1">
           пн-cб
         </span>

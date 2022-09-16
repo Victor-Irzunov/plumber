@@ -9,7 +9,7 @@ const FeatureCard = ({ icon, title, content, index, price }) => {
   return (
 
     <div
-    className={`
+      className={`
     group
     w-[90%] 
     flex 
@@ -17,7 +17,7 @@ const FeatureCard = ({ icon, title, content, index, price }) => {
     py-2 
     sd:px-4
     xx:px-0
-    xx:flex-col
+    xy:flex-col
     items-center 
     rounded-[20px] 
     ${index !== features.length - 1 ? "mb-1" : "mb-0"} 
@@ -29,11 +29,24 @@ const FeatureCard = ({ icon, title, content, index, price }) => {
         <Modal title={title} setIsModal={setIsModal} />
       }
 
-      <div className="w-full flex
+      <div className="
+      w-full 
+      flex
       sm:text-left	
-      xx:text-center
-      sm:flex-row xx:flex-col justify-between items-center sm:mr-10 xx:mr-0">
-        <h4 className="font-poppins font-semibold basis-1/3 text-white text-[20px] leading-[23.4px] mb-1">
+      xy:text-center
+      sm:flex-row
+      xy:flex-col
+      justify-between
+      items-center
+      sm:mr-10
+      xx:mr-0"
+      >
+        <h4 className="
+        font-poppins font-semibold
+        basis-1/3 text-white
+        text-[20px]
+        leading-[23.4px] mb-1
+        ">
           {title}
         </h4>
         <p className="
@@ -50,7 +63,11 @@ const FeatureCard = ({ icon, title, content, index, price }) => {
         >
           {content}
         </p>
-        <p className="font-poppins basis-1/8 font-normal text-center text-white text-[22px] leading-[24px]">
+        <p className="font-poppins
+          basis-1/8 font-normal
+          text-center text-white
+          text-[22px] leading-[24px]
+          ">
           {price} руб.
         </p>
       </div>

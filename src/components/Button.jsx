@@ -10,10 +10,10 @@ const Button = ({ styles, setIsModal }) => (
     className={`
     sm:py-4
     sm:px-6
-    xx:py-3
-    xx:px-4
-    xx:mt-3
-    xx:mb-5
+    xy:py-3
+    xy:px-4
+    xy:mt-3
+    xy:mb-5
     font-poppins
     font-medium
     text-[18px]

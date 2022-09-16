@@ -19,7 +19,7 @@ const Footer = () => (
       <div className="flex-[1.5] w-full flex flex-row text-white text-center justify-between flex-wrap md:mt-0 mt-10">
         <div className="flex-[1]">
           <h4 className="text-[22px]">Наши контакты</h4>
-          <p className={`${styles.paragraph} text-[16px]`}>
+          <p className={`${styles.paragraph} xm:text-[16px] xy:text-[13px]`}>
             г. Минск, ул. просп. Независимости 100 помщ. 100<br />
             +375 29 000-00-00
           </p>
@@ -27,11 +27,11 @@ const Footer = () => (
 
         <div className="flex-[1]">
           <h4 className="text-[22px]">Наши реквизиты</h4>
-          <p className={`${styles.paragraph} text-[16px]`}>
-            ИП «ПрофСантех»<br/>
-            УНП 193609000<br/>
-            Зарегистрировано Минским горисполкомом 19.07.2017г.<br/>
-            Юридический адрес: 220040, г. Минск, ул. просп.Независимости 100 помщ.100<br/>
+          <p className={`${styles.paragraph} xm:text-[16px] xy:text-[13px]`}>
+            ИП «ПрофСантех»<br />
+            УНП 193609000<br />
+            Зарегистрировано Минским горисполкомом 19.07.2017г.<br />
+            Юридический адрес: 220040, г. Минск, ул. просп.Независимости 100 помщ.100<br />
             р/с: BY30 000 000 000 000 0000 в ЗАО «Ваш-Банк»
           </p>
         </div>
@@ -39,16 +39,23 @@ const Footer = () => (
     </div>
 
     <div className="
-    w-full flex justify-between
-    items-center md:flex-row
-    flex-col sm:pt-4 xx:pt-1  border-t-[1px]
-    border-t-[#3F3E45]">
+    w-full 
+    flex
+    justify-between
+    items-center 
+    md:flex-row
+    flex-col 
+    sm:pt-4 
+    xx:pt-1 
+    border-t-[1px]
+    border-t-[#3F3E45]
+    ">
       <p className="
       font-poppins
       font-normal
       text-center
       sm:text-[14px]
-      xx:text-[10px]
+      xy:text-[10px]
       leading-[27px]
       text-white
       opacity-30
