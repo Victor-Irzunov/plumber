@@ -16,7 +16,7 @@ import viber from "./viber.svg";
 import people01 from "./people01.jpg";
 import people02 from "./people02.jpg";
 import people03 from "./people03.jpg";
-import plumber from "./plumber2-min.png";
+import plumber from "./plumber2-min.webp";
 import mask from "./mask.png";
 import phone from "./phone.png";
 
