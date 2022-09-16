@@ -1,4 +1,4 @@
-import bill from "./help.png";
+import help from "./help-min.png";
 import logo from "./logo.png";
 import quotes from "./quotes.svg";
 import send from "./Send.svg";
@@ -21,7 +21,7 @@ import mask from "./mask.png";
 import phone from "./phone.png";
 
 export {
-  bill,
+  help,
   logo,
   quotes,
   clock,
