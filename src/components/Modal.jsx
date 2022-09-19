@@ -31,7 +31,7 @@ function Modal({ title, isModal, setIsModal }) {
 					❌
 				</div>
 				<p className="text-gradient text-2xl">{title}</p>
-				<FormPhone setIsModal={setIsModal} />
+				<FormPhone setIsModal={setIsModal} title={title} />
 			</div>
 		</div>
 	)

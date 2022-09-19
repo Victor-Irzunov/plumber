@@ -1,16 +1,27 @@
-import React, { useState } from "react"
+import React, { useState,useEffect } from "react"
+import { useInView } from 'react-intersection-observer';
 import styles from "../style";
 import { plumber } from "../assets";
 import GetStarted from "./GetStarted";
 import Modal from "./Modal";
 
 
-const Hero = () => {
-
+const Hero = ({setIsInView}) => {
   const [isModal, setIsModal] = useState(false)
 
+  const { ref, inView, entry } = useInView({
+    initialInView: true,
+    threshold : 0,
+    // triggerOnce: true,
+  });
+
+
+  useEffect(() => {
+    setIsInView(inView)
+  },[inView])
+
   return (
-    <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
+    <section id="home" ref={ref} className={`flex md:flex-row flex-col ${styles.paddingY}`}>
       {isModal &&
         <Modal title={"Вызвать мастера"} setIsModal={setIsModal} />
       }

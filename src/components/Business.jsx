@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { useInView } from 'react-intersection-observer';
 import { features } from "../constants";
 import styles, { layout } from "../style";
 import Button from "./Button";
@@ -6,8 +7,9 @@ import Modal from "./Modal";
 
 const FeatureCard = ({ icon, title, content, index, price }) => {
   const [isModal, setIsModal] = useState(false)
-  return (
 
+
+  return (
     <div
       className={`
     group
@@ -29,7 +31,8 @@ const FeatureCard = ({ icon, title, content, index, price }) => {
         <Modal title={title} setIsModal={setIsModal} />
       }
 
-      <div className="
+      <div
+        className="
       w-full 
       flex
       sm:text-left	
@@ -76,29 +79,40 @@ const FeatureCard = ({ icon, title, content, index, price }) => {
   )
 }
 
-const Business = () => (
-  <section id="service" className={`${layout.section}`}>
+const Business = ({ setIsInView }) => {
+  const { ref, inView, entry } = useInView({
+    initialInView: true,
+    threshold: 0,
+    rootMargin: "-100px 0px 0px 0px",
+    // triggerOnce: true,
+  });
+
+  useEffect(() => {
+    setIsInView(inView)
+  }, [inView])
+
+  return (
+    <section id="service" ref={ref} className={`${layout.section}`}>
+      <div className={layout.sectionInfo2}>
+        <h2 className={styles.heading2}>
+          Стоимость услуги сантехника в Минске
+        </h2>
+        {/* // <br className="sm:block hidden" /> */}
+        <p className={`${styles.paragraph} w-full mt-5`}>
+          Консультация по телефону БЕСПЛАТНО. Чтобы быстро устранить проблему и узнать более точную сумму, Вам необходимо как можно подробнее описать случившуеся поломку. Стоимость услуг сантехника зависит от объема и сложности работ. Мы предлагаем гибкую систему скидок для клиентов с крупными заказами. Обращаем Ваше внимание, что цена может незначительно измениться если появятся непредусмотренные сложности в процессе выполнения работ.
+        </p>
+      </div>
+
+      <div className={`${layout.sectionImg} flex-col`}>
+        {features.map((feature, index) => (
+          <FeatureCard key={feature.id} {...feature} index={index} />
+        ))}
+      </div>
 
 
+    </section>
+  )
+}
 
-    <div className={layout.sectionInfo2}>
-      <h2 className={styles.heading2}>
-        Стоимость услуги сантехника в Минске
-      </h2>
-      {/* // <br className="sm:block hidden" /> */}
-      <p className={`${styles.paragraph} w-full mt-5`}>
-        Консультация по телефону БЕСПЛАТНО. Чтобы быстро устранить проблему и узнать более точную сумму, Вам необходимо как можно подробнее описать случившуеся поломку. Стоимость услуг сантехника зависит от объема и сложности работ. Мы предлагаем гибкую систему скидок для клиентов с крупными заказами. Обращаем Ваше внимание, что цена может незначительно измениться если появятся непредусмотренные сложности в процессе выполнения работ.
-      </p>
-    </div>
-
-    <div className={`${layout.sectionImg} flex-col`}>
-      {features.map((feature, index) => (
-        <FeatureCard key={feature.id} {...feature} index={index} />
-      ))}
-    </div>
-
-
-  </section>
-);
 
 export default Business;

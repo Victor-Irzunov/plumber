@@ -4,6 +4,10 @@ import { Billing, Business, CardDeal, CTA, Footer, Navbar, Stats, Testimonials, 
 
 const App = () => {
   const [scroll, setScroll] = useState(0)
+  const [ isInViewHero, setIsInViewHero]= useState(false)
+  const [ isInViewBusiness, setIsInViewBusiness]= useState(false)
+  const [ isInViewBilling, setIsInViewBilling]= useState(false)
+  const [ isInViewTestimonials, setIsInViewTestimonials]= useState(false)
 
 
   const handleScroll = () => {
@@ -15,8 +19,8 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  return (
 
+  return (
     <div className="bg-primary w-full overflow-hidden relative">
       <div className={`${styles.paddingX} ${styles.flexCenter} 
       fixed top-0 left-0 right-0 z-[100000]
@@ -24,23 +28,28 @@ const App = () => {
         }`}
       >
         <div className={`${styles.boxWidth}`}>
-          <Navbar />
+          <Navbar
+            isInViewHero={isInViewHero}
+            isInViewBusiness={isInViewBusiness}
+            isInViewBilling={isInViewBilling}
+            isInViewTestimonials={isInViewTestimonials}
+          />
         </div>
       </div>
 
       <div className={`bg-primary ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
-          <Hero />
+          <Hero setIsInView={setIsInViewHero} />
         </div>
       </div>
 
       <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Stats />
-          <Business />
-          <Billing />
+          <Business setIsInView={setIsInViewBusiness} />
+          <Billing setIsInView={setIsInViewBilling}/>
           <CardDeal />
-          <Testimonials />
+          <Testimonials setIsInView={setIsInViewTestimonials} />
           <CTA />
           <Footer />
         </div>
