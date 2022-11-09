@@ -118,6 +118,7 @@ function FormPhone({ setIsModal, title }) {
 					mask="+3\7\5 99 999 99 99"
 					maskChar={'-'}
 					value={tel}
+					required
 					onChange={(e) => setTel(e.target.value)}
 					beforeMaskedValueChange={beforeMaskedValueChange}
 				/>
