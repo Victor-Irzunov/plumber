@@ -12,27 +12,34 @@ const Footer = () => (
           className="w-[300px] h-[82.14px] object-contain"
         />
         <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
-          Опытный сантехник сделает всё качественно, аккуратно и недорого.
+          Опытные мастера сделает всё качественно, аккуратно и недорого.
         </p>
       </div>
 
       <div className="flex-[1.5] w-full flex flex-row text-white text-center justify-between flex-wrap md:mt-0 mt-10">
         <div className="flex-[1]">
           <h4 className="text-[22px]">Наши контакты</h4>
-          <p className={`${styles.paragraph} xm:text-[16px] xy:text-[13px]`}>
-            г. Минск, ул. просп. Независимости 100 помщ. 100<br />
-            +375 29 000-00-00
-          </p>
+          <div className='mt-2'>
+            <a href="tel:+375256009412" className="text-white mr-3 text-center">
+              <span className="text-gradient block">Витебск</span> +375 25 600-94-12
+            </a>
+            <a href="tel:+375256009413" className="text-white mx-3 text-center">
+              <span className="text-gradient block">Гомель</span>{' '}{' '} +375 25 600-94-13
+            </a>
+            <a href="tel:+375256009416" className="text-white text-center ml-3">
+              <span className="text-gradient block">Могилев</span> +375 25 600-94-16
+            </a>
+          </div>
         </div>
 
-        <div className="flex-[1]">
-          <h4 className="text-[22px]">Наши реквизиты</h4>
-          <p className={`${styles.paragraph} xm:text-[16px] xy:text-[13px]`}>
-            ИП «ПрофСантех»<br />
-            УНП 193609000<br />
-            Зарегистрировано Минским горисполкомом 19.07.2017г.<br />
-            Юридический адрес: 220040, г. Минск, ул. просп.Независимости 100 помщ.100<br />
-            р/с: BY30 000 000 000 000 0000 в ЗАО «Ваш-Банк»
+        <div className="flex-[1] ">
+          <h4 className="sd:text-base xz:text-sm text-white/70 mb-2">Наши реквизиты</h4>
+          <p className={`text-gray-400 text-sm`}>
+            ООО «Услуга Плюс»<br />
+            УНП 391846576<br />
+            Зарегистрировано Администрацией Октябрьского района г. Витебска 20.10.2023<br />
+            Юридический адрес: 210026, г. Витебск, ул. Гагарина 4а<br />
+            р/с: BY16 BPSB 3012 3375 4601 9933 0000 Банк ОАО «Сбер Банк» г. Витебск, ул. Ленина 26 БИГ:BPSBBY2X
           </p>
         </div>
       </div>
@@ -61,7 +68,7 @@ const Footer = () => (
       opacity-30
       hover:opacity-90
       ">
-        Copyright Ⓒ 20..-2022. Created & Designed By <a href="https://vi-tech.by" className="text-gradient" target="_blank">VI:TECH</a>. &nbsp; Все права защищены. Информация на сайте не является публичной офертой.
+        Copyright Ⓒ 2023. Created & Designed By <a href="https://vi-tech.by" className="text-gradient" target="_blank">VI:TECH</a>. &nbsp; Все права защищены. Информация на сайте не является публичной офертой.
       </p>
 
       <div className="flex flex-row md:mt-0 mt-6">

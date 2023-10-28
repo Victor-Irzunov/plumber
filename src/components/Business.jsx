@@ -5,79 +5,43 @@ import styles, { layout } from "../style";
 import Button from "./Button";
 import Modal from "./Modal";
 
-const FeatureCard = ({ icon, title, content, index, price }) => {
-  const [isModal, setIsModal] = useState(false)
-
+const FeatureCard = ({ title, children }) => {
+  const [isModal, setIsModal] = useState(false);
 
   return (
-    <div
-      className={`
-    group
-    w-[90%] 
-    flex 
-    sm:flex-row 
-    py-2 
-    sd:px-4
-    xx:px-0
-    xy:flex-col
-    items-center 
-    rounded-[20px] 
-    ${index !== features.length - 1 ? "mb-1" : "mb-0"} 
-    feature-card
-    mt-1
-    `}
-    >
-      {isModal &&
-        <Modal title={title} setIsModal={setIsModal} />
-      }
-
-      <div
-        className="
-      w-full 
-      flex
-      sm:text-left	
-      xy:text-center
-      sm:flex-row
-      xy:flex-col
-      justify-between
-      items-center
-      sm:mr-10
-      xx:mr-0"
-      >
-        <h4 className="
-        font-poppins font-semibold
-        basis-1/3 text-white
-        text-[20px]
-        leading-[23.4px] mb-1
-        ">
+    <div className="text-white mt-16 sd:text-base xz:text-xs w-full bg-white/5 pt-5 sd:px-2 xz:px-0 sd:pb-3 xz:pb-0">
+      <table className="border-separate border border-slate-500 w-full">
+        <caption class="caption-top sd:text-4xl xz:text-xl mb-4">
           {title}
-        </h4>
-        <p className="
-        font-poppins
-        basis-1/2
-        ss:basis-1/1
-        font-normal
-        text-white
-        opacity-25
-        group-hover:opacity-70
-        text-[13px]
-        leading-[24px]
-        p-4"
-        >
-          {content}
-        </p>
-        <p className="font-poppins
-          basis-1/8 font-normal
-          text-center text-white
-          text-[22px] leading-[24px]
-          ">
-          {price} руб.
-        </p>
-      </div>
-      <Button styles={``} setIsModal={setIsModal} />
+        </caption>
+        <thead className="bg-white/5">
+          <tr>
+            <th className="border border-slate-600 sd:px-2 xz:px-1">Наименование</th>
+            <th className="border border-slate-600 sd:px-2 xz:px-1">Описание</th>
+            <th className="border border-slate-600 sd:px-4 xz:px-2">Цена</th>
+            <th className="border border-slate-600 sd:px-2 xz:px-1">Заказ</th>
+          </tr>
+        </thead>
+        <tbody>
+          {children.map((el) => (
+            <tr key={el.id} className="">
+              <td className="border border-slate-700 sd:px-2 xz:px-1">{el.title}</td>
+              <td className="border border-slate-700 sd:px-2 xz:px-1 text-center">{el.content}</td>
+              <td className="border border-slate-700 sd:px-2 xz:px-1 text-center">от {el.price} руб.</td>
+              <td className="border border-slate-700 sd:px-2 xz:px-1 text-center">
+                <Button styles={""} setIsModal={setIsModal} />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {isModal && <Modal title={title} setIsModal={setIsModal} />}
     </div>
-  )
-}
+  );
+};
+
+
+
 
 const Business = ({ setIsInView }) => {
   const { ref, inView, entry } = useInView({
@@ -94,12 +58,11 @@ const Business = ({ setIsInView }) => {
   return (
     <section id="service" ref={ref} className={`${layout.section}`}>
       <div className={layout.sectionInfo2}>
-        <h2 className={styles.heading2}>
-          Стоимость услуги сантехника в Минске
+        <h2 className={`sd:text-4xl xz:text-2xl uppercase text-white`}>
+          Стоимость услуг мастера
         </h2>
-        {/* // <br className="sm:block hidden" /> */}
         <p className={`${styles.paragraph} w-full mt-5`}>
-          Консультация по телефону БЕСПЛАТНО. Чтобы быстро устранить проблему и узнать более точную сумму, Вам необходимо как можно подробнее описать случившуеся поломку. Стоимость услуг сантехника зависит от объема и сложности работ. Мы предлагаем гибкую систему скидок для клиентов с крупными заказами. Обращаем Ваше внимание, что цена может незначительно измениться если появятся непредусмотренные сложности в процессе выполнения работ.
+          Консультация по телефону БЕСПЛАТНО. Чтобы быстро устранить проблему и узнать более точную сумму, Вам необходимо как можно подробнее описать случившуеся поломку. Стоимость услуг зависит от объема и сложности работ. Мы предлагаем гибкую систему скидок для клиентов с крупными заказами. Обращаем Ваше внимание, что цена может незначительно измениться если появятся непредусмотренные сложности в процессе выполнения работ.
         </p>
       </div>
 
@@ -108,11 +71,7 @@ const Business = ({ setIsInView }) => {
           <FeatureCard key={feature.id} {...feature} index={index} />
         ))}
       </div>
-
-
     </section>
   )
 }
-
-
 export default Business;

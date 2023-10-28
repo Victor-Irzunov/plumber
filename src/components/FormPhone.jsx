@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import InputMask from 'react-input-mask';
+import InputMask from 'react-input-mask'
 import axios from "axios"
 
 function FormPhone({ setIsModal, title }) {
@@ -13,8 +13,11 @@ function FormPhone({ setIsModal, title }) {
 	const form = useRef()
 
 
-	const token = '5562126487:AAGqX2TBd3toX15OgSCQ2yW55RNfgtBWQko'
-	const chat_id = '-1001794221917'
+	// const token = '5562126487:AAGqX2TBd3toX15OgSCQ2yW55RNfgtBWQko'
+	// const chat_id = '-1001794221917'
+	// const uri_api = `https://api.telegram.org/bot${token}/sendMessage`
+	const token = '6624685314:AAE2JmF5pzjexuk0cL3Al8Rgum2y1ptHn6M'
+	const chat_id = '-1001921839507'
 	const uri_api = `https://api.telegram.org/bot${token}/sendMessage`
 
 
@@ -27,6 +30,7 @@ function FormPhone({ setIsModal, title }) {
 		messageForm += `<b> </b>\n`
 		messageForm += `<b>Отправитель: </b> ${name}\n`
 		messageForm += `<b>Телефон: </b> ${tel}\n`
+		// messageForm += `<img src='${}' /> `
 
 		axios.post(uri_api, {
 			chat_id,
@@ -44,23 +48,21 @@ function FormPhone({ setIsModal, title }) {
 
 
 	const beforeMaskedValueChange = (newState, oldState, userInput) => {
-		var { value } = newState;
-		var selection = newState.selection;
-		var cursorPosition = selection ? selection.start : null;
-
+		var { value } = newState
+		var selection = newState.selection
+		var cursorPosition = selection ? selection.start : null
 		// keep minus if entered by user
 		if (value.endsWith('-') && userInput !== '-' && !tel.endsWith('-')) {
 			if (cursorPosition === value.length) {
-				cursorPosition--;
-				selection = { start: cursorPosition, end: cursorPosition };
+				cursorPosition--
+				selection = { start: cursorPosition, end: cursorPosition }
 			}
-			value = value.slice(0, -1);
+			value = value.slice(0, -1)
 		}
-
 		return {
 			value,
 			selection
-		};
+		}
 	}
 
 

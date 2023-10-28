@@ -1,5 +1,5 @@
-import help from "./help-min.png";
-import logo from "./logo.png";
+import help from "./help-min.webp";
+import logo from "./logo.webp";
 import quotes from "./quotes.svg";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
@@ -13,11 +13,11 @@ import instagram2 from "./instagram2.svg";
 import clock from "./clock.svg";
 import telegram from "./telegram.svg";
 import viber from "./viber.svg";
-import people01 from "./people01.jpg";
-import people02 from "./people02.jpg";
-import people03 from "./people03.jpg";
-import plumber from "./plumber2-min.webp";
-import mask from "./mask.png";
+import people01 from "./people01.webp";
+import people02 from "./people02.webp";
+import people03 from "./people03.webp";
+import plumber from "./plumber.webp";
+import mask from "./mask.webp";
 import phone from "./phone.png";
 
 export {
