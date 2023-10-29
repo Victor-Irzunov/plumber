@@ -9,7 +9,7 @@ const FeatureCard = ({ title, children }) => {
   const [isModal, setIsModal] = useState(false);
 
   return (
-    <div className="text-white mt-16 sd:text-base xz:text-xs w-full bg-white/5 pt-5 sd:px-2 xz:px-0 sd:pb-3 xz:pb-0">
+    <div className="text-white mt-8 sd:text-base xz:text-xs w-full bg-white/5 pt-5 sd:px-2 xz:px-0 sd:pb-3 xz:pb-0">
       <table className="border-separate border border-slate-500 w-full">
         <caption class="caption-top sd:text-4xl xz:text-xl mb-4">
           {title}
@@ -17,7 +17,7 @@ const FeatureCard = ({ title, children }) => {
         <thead className="bg-white/5">
           <tr>
             <th className="border border-slate-600 sd:px-2 xz:px-1">Наименование</th>
-            <th className="border border-slate-600 sd:px-2 xz:px-1">Описание</th>
+            <th className="border border-slate-600 sd:px-2 xz:px-1">инфо</th>
             <th className="border border-slate-600 sd:px-4 xz:px-2">Цена</th>
             <th className="border border-slate-600 sd:px-2 xz:px-1">Заказ</th>
           </tr>
@@ -29,7 +29,7 @@ const FeatureCard = ({ title, children }) => {
               <td className="border border-slate-700 sd:px-2 xz:px-1 text-center">{el.content}</td>
               <td className="border border-slate-700 sd:px-2 xz:px-1 text-center">от {el.price} руб.</td>
               <td className="border border-slate-700 sd:px-2 xz:px-1 text-center">
-                <Button styles={""} setIsModal={setIsModal} />
+                <Button styles={""} setIsModal={setIsModal} table={true} />
               </td>
             </tr>
           ))}
@@ -61,7 +61,7 @@ const Business = ({ setIsInView }) => {
         <h2 className={`sd:text-4xl xz:text-2xl uppercase text-white`}>
           Стоимость услуг мастера
         </h2>
-        <p className={`${styles.paragraph} w-full mt-5`}>
+        <p className={`font-poppins font-normal text-white w-full mt-5`}>
           Консультация по телефону БЕСПЛАТНО. Чтобы быстро устранить проблему и узнать более точную сумму, Вам необходимо как можно подробнее описать случившуеся поломку. Стоимость услуг зависит от объема и сложности работ. Мы предлагаем гибкую систему скидок для клиентов с крупными заказами. Обращаем Ваше внимание, что цена может незначительно измениться если появятся непредусмотренные сложности в процессе выполнения работ.
         </p>
       </div>

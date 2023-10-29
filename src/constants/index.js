@@ -208,6 +208,12 @@ export const features = [
         content:
         "",
       },
+      {
+        id: '19',
+        title: "Другая услуга",
+        price: 20,
+        content:'',
+      },
     ],
   },
   {
@@ -265,6 +271,12 @@ export const features = [
         title: "Монтаж и подключение светодиодной ленты",
         price: 7,
         content:'м.п.',
+      },
+      {
+        id: '9',
+        title: "Другая услуга",
+        price: 10,
+        content:'',
       },
       
     ]
@@ -375,6 +387,12 @@ export const features = [
         price: 25,
         content:'',
       },
+      {
+        id: '18',
+        title: "Другая услуга",
+        price: 25,
+        content:'',
+      },
     ]
   },
   {
@@ -423,6 +441,12 @@ export const features = [
         price: 25,
         content:'',
       },
+      {
+        id: '8',
+        title: "Другая услуга",
+        price: 18,
+        content:'',
+      },
     ]
   },
   {
@@ -451,6 +475,12 @@ export const features = [
         id: '4',
         title: "Послеремонтная",
         price: 45,
+        content:'До 40м',
+      },
+      {
+        id: '5',
+        title: "Другая услуга",
+        price: 27,
         content:'До 40м',
       },
     ]
