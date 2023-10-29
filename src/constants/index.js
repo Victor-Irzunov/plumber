@@ -182,7 +182,7 @@ export const features = [
         id: "16",
         icon: send,
         title: "Навеска полотенцесушителя",
-        price: 36,
+        price: 26,
         // content:
         //   "Полотенцесушитель хорошая вещь, но может сломаться. Обычно появляется течь. Надо следить за его состоянием, чтобы избежать нежелательного затопления соседей снизу.",
         content:
@@ -202,7 +202,7 @@ export const features = [
         id: "18",
         icon: send,
         title: "Вызов сантехника на дом для диагностики",
-        price: 15,
+        price: 0,
         // content:
         //   "При выявлении неисправности бытовой техники или отопительной системы, требуется вызов мастера. Он проведет полную диагностику, определит причину, подберет нужные детали. Для работы важно приглашать опытного специалиста.",
         content:
@@ -237,7 +237,7 @@ export const features = [
       {
         id: '4',
         title: "Поиск и устранение неисправности в электропроводке",
-        price: 49,
+        price: 29,
         content:'',
       },
       {
@@ -276,7 +276,7 @@ export const features = [
       {
         id: '1',
         title: "Монтаж ТВ",
-        price: 45,
+        price: 25,
         content:'',
       },
       {
@@ -324,7 +324,7 @@ export const features = [
       {
         id: '9',
         title: "Подключение ТВ",
-        price: 34,
+        price: 25,
         content:'',
       },
       {
@@ -336,7 +336,7 @@ export const features = [
       {
         id: '11',
         title: "Сборка/Разборка мебели на дому",
-        price: 69,
+        price: 29,
         content:'',
       },
       {
@@ -384,7 +384,7 @@ export const features = [
       {
         id: '1',
         title: "Регулировка прижима двери",
-        price: 39,
+        price: 29,
         content:'',
       },
       {
@@ -396,25 +396,25 @@ export const features = [
       {
         id: '3',
         title: "Установка замена замка входной двери",
-        price: 29,
+        price: 27,
         content:'',
       },
       {
         id: '4',
         title: "Установка замена замка межкомнатной двери (без врезки)",
-        price: 29,
+        price: 23,
         content:'',
       },
       {
         id: '5',
         title: "Замена сердцевины цилиндра (сложный механизм) замка",
-        price: 39,
+        price: 18,
         content:'',
       },
       {
         id: '6',
         title: "Установка замена дверной ручки",
-        price: 29,
+        price: 13,
         content:'',
       },
       {
@@ -432,25 +432,25 @@ export const features = [
       {
         id: '1',
         title: "Поддерживающая",
-        price: 87,
+        price: 27,
         content:'До 40м',
       },
       {
         id: '2',
         title: "Повседневная",
-        price: 79,
+        price: 29,
         content:'До 40м',
       },
       {
         id: '3',
         title: "Генеральная",
-        price: 196,
+        price: 38,
         content:'До 40м',
       },
       {
         id: '4',
         title: "Послеремонтная",
-        price: 218,
+        price: 45,
         content:'До 40м',
       },
     ]
@@ -528,16 +528,11 @@ export const stats = [
 
 
 export const socialMedia = [
-  {
-    id: "instagram",
-    icon: instagram2,
-    link: "https://www.instagram.com/",
-  },
-  {
-    id: "tiktok",
-    icon: tiktok,
-    link: "https://www.tiktok.com/",
-  },
+  // {
+  //   id: "instagram",
+  //   icon: instagram2,
+  //   link: "https://www.instagram.com/",
+  // },
   {
     id: "viber",
     icon: viber,
